@@ -49,4 +49,16 @@ describe("Goal API tests", () => {
             expect(res.body).toHaveProperty("text");
         });
     });
+
+    describe("GET /api/goals/:id", () => {
+        test("A specific goal is returned", async () => {
+            const goalsAtStart = await Goal.find({});
+            const goalToView = goalsAtStart[0];
+            await api
+              .get(`/api/goals/${goalToView.id}`)
+              .set("Authorization", `Bearer ${token}`)
+              .expect(200)
+              .expect("Content-Type", /application\/json/);
+        });
+    });
 });
