@@ -61,4 +61,23 @@ describe("Goal API tests", () => {
               .expect("Content-Type", /application\/json/);
         });
     });
+    
+    describe("POST /api/goals", () => {
+        test("A valid goal can be added", async () => {
+            const newGoal = {text: "yep",};
+            await api
+              .post("/api/goals")
+              .set("Authorization", `Bearer ${token}`)
+              .send(newGoal)
+              .expect(200)
+        });
+        test("An invalid goal can't be added", async () => {
+            const newGoal = {name: "nope",};
+            await api
+              .post("/api/goals")
+              .set("Authorization", `Bearer ${token}`)
+              .send(newGoal)
+              .expect(400);
+        });
+    });
 });
