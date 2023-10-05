@@ -11,7 +11,7 @@ let token = null;
 beforeAll(async () => {
     await User.deleteMany({});
     const result = await api
-      .post("/api/user/signup")
+      .post("/api/users")
       .send({name: "ssf", email: "mattiv@matti.fi", password: "R3g5T7#gh" });
     token = result.body.token;
   });
@@ -21,7 +21,7 @@ describe("Goal API tests", () => {
         await Goal.deleteMany({});
         await api
           .post("/api/goals")
-          .set("Authorization", "bearer " + token)
+          .set("Authorization", `Bearer ${token}`)
           .send(goals[0])
           .send(goals[1]);
     });
@@ -30,13 +30,13 @@ describe("Goal API tests", () => {
         test("Goals are returned", async () => {
             await api
               .get("/api/goals")
-              .set("Authorization", "bearer " + token)
+              .set("Authorization", `Bearer ${token}`)
               .expect(200)
         });
         test("Goals are returned as json", async () => {
             await api
               .get("/api/goals")
-              .set("Authorization", "bearer " + token)
+              .set("Authorization", `Bearer ${token}`)
               .expect(200)
               .expect("Content-Type", /application\/json/);
         });
