@@ -40,5 +40,13 @@ describe("Goal API tests", () => {
               .expect(200)
               .expect("Content-Type", /application\/json/);
         });
+        test("Goals can be deleted", async () => {
+            const goals = await Goal.find({});
+            const res = await api
+              .delete(`/api/goals/${goals[0].id}`)
+              .set("Authorization", `Bearer ${token}`)
+              .expect(200);
+            expect(res.body).toHaveProperty("text");
+        });
     });
 });
