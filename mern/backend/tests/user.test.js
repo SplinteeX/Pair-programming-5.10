@@ -42,7 +42,7 @@ describe("User API tests", () => {
       .get("/api/users/me")
       .set("Authorization", `Bearer ${token}`)
       .expect(200);
-    console.log(res);
+    expect(res.body).toHaveProperty("_id");
   });
 });
 

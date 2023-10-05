@@ -3,12 +3,12 @@ Content-Type: application/json
 
 {
     "name": "jeff",
-    "email": "jeffrey1@amazon.com",
+    "email": "jeffrey3311@amazon.com",
     "password": "1@aBcdefg"
 }
 ###
 POST http://localhost:5000/api/goals HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlOTA1OWQwNTRlNTI4MTU3ZThmMTciLCJpYXQiOjE2OTY1MDE4NDksImV4cCI6MTY5Njc2MTA0OX0.qYRUgOo2pRI9Ldv0ROz_N4L5iaO1-u3t2X_xUQfxHoU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlYTg4NDBhZDJiOWY1NTViYWM5N2EiLCJpYXQiOjE2OTY1MDgwMzYsImV4cCI6MTY5Njc2NzIzNn0.cJkluSNwmFdrus7DjDUEX7nPmpBAGMxo7mPCP2Ag4ek
 Content-Type: application/json
 
 {
@@ -16,4 +16,4 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:5000/api/users/me HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlOTA1OWQwNTRlNTI4MTU3ZThmMTciLCJpYXQiOjE2OTY1MDE4NDksImV4cCI6MTY5Njc2MTA0OX0.qYRUgOo2pRI9Ldv0ROz_N4L5iaO1-u3t2X_xUQfxHoU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlYTg4NDBhZDJiOWY1NTViYWM5N2EiLCJpYXQiOjE2OTY1MDgwMzYsImV4cCI6MTY5Njc2NzIzNn0.cJkluSNwmFdrus7DjDUEX7nPmpBAGMxo7mPCP2Ag4ek
